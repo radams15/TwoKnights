@@ -65,7 +65,6 @@ struct Moves run(){
     
     while(1){
         struct Moves moves = get_moves(board,0,0);
-            printf("OGKDN\n");
         
         if(moves.length == 0){
             break;
