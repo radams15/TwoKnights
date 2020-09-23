@@ -20,35 +20,47 @@ def get_all_moves(board):
                                 out[(x,y)] = moves
         return out
 
+history = [ 0 ]
+i=0
 def run():
+        global i
         board = gen_board()
-        history = []
-        i=0
+
         point=(0,0)
+
+        set_point(board,*point, 1)
         while True:
                 moves = get_moves(board,*point)
 
                 if not moves:
-                        #print_board()
                         break
 
-                id_to_get = random.randint(0,len(moves)-1)
+                id_to_get = history[-1]
                 point = moves[id_to_get]
+                
                 history.append(point)
 
                 set_point(board,*point, 1)
                 i+=1
-        
+                
+
         return history
+
+def print_plots(plots):
+        board = gen_board()
+        for plot in plots:
+               set_point(board, *plot, 1)
+        print_board(board) 
 
 largest=0
 while True:
         result = run()
+
+
         length = len(result)
         largest = max(largest,length)
         print(largest)
-        if len(result) == 64:
+        if len(result) >= 64:
                 print(result)
                 break
-        
 
