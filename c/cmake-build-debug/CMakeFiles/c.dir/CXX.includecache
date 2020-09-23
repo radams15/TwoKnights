@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/files/scripts/Projects/TwoKnights/c/board.cpp
+cstdlib
+-
+
+/mnt/files/scripts/Projects/TwoKnights/c/main.cpp
+stdio.h
+-
+memory.h
+-
+board.cpp
+/mnt/files/scripts/Projects/TwoKnights/c/board.cpp
+vector
+-
+ctime
+-
+unistd.h
+-
+string
+-
+fstream
+-
+

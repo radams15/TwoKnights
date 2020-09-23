@@ -1,5 +1,3 @@
-
-
 gen_board = lambda: [[0 for _ in range(8)] for _ in range(8)]
 print_board = lambda: [print(x) for x in board]
 

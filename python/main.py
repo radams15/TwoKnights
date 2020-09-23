@@ -11,11 +11,11 @@ def get_moves(board,x, y):
                                 out.append((nx,ny))
         return out
 
-def get_all_moves():
+def get_all_moves(board):
         out = {}
         for x in range(8):
                 for y in range(8):
-                        moves = get_moves(x,y)
+                        moves = get_moves(board, x, y)
                         if moves:
                                 out[(x,y)] = moves
         return out

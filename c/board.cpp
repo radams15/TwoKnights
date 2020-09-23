@@ -1,12 +1,12 @@
-#include <stdlib.h>
+#include <cstdlib>
 
 #define OCCUPIED 1
 #define NONE 0
 
 int** gen_board(){
-    int** out = malloc(8 * sizeof(int*));
+    int** out = (int**) malloc(8 * sizeof(int*));
     for(int x=0 ; x<8 ; x++){
-        out[x] = malloc(8*sizeof(int));
+        out[x] = (int*) malloc(8*sizeof(int));
         for(int i=0 ; i<8 ; i++){
             out[x][i] = NONE;
         }
