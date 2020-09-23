@@ -7,7 +7,7 @@ def get_moves(board,x, y):
     for x1,y1 in [[1,2],[2,1],[-1,2],[2,-1],[-2,1],[1,-2],[-1,-2],[-2,-1]]:
         nx,ny = x+x1, y+y1
         if 0<nx<8 and 0<ny<8:
-            if get_board(board, nx, ny) is not 1:
+            if get_board(board, nx, ny) != 1:
                 out.append((nx,ny))
     return out
 
@@ -37,7 +37,6 @@ def run(i, board):
     if not moves:
         return out
 
-    print(moves, i)
     try:
         point = moves[i]
     except:
@@ -62,6 +61,7 @@ def main():
     set_board(board, *point, 1)
     while True:
         moves = get_moves(board, *point)
+        print(moves)
 
         if not moves:
             break
@@ -76,6 +76,8 @@ def main():
         out.append(point)
 
         set_board(board, *point, 1)
+
+    print_board(board)
 
     return out
 
